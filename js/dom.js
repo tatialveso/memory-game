@@ -1,3 +1,5 @@
+const match = new MemoryGame()
+
 const startScreen = document.getElementById("startScreen")
 const inputName = document.querySelector("#inputName")
 const btnStart = document.getElementById("btnStart")
@@ -13,6 +15,8 @@ btnStart.addEventListener("click", (event) => {
         return
     }
 
+    match.renderDeck()
+    
     startScreen.style.display = "none"
     gameScreen.style.display = "flex"
 
