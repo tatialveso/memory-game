@@ -16,9 +16,27 @@ btnStart.addEventListener("click", (event) => {
     }
 
     match.renderDeck()
-    
+
     startScreen.style.display = "none"
     gameScreen.style.display = "flex"
 
     gameName.innerText = inputName.value
+
+    settingUpGame()
 })
+
+// inicio da minha partida
+function settingUpGame() {
+    const allBackCards = document.querySelectorAll(".show")
+
+    allBackCards.forEach((backCard) => {
+        backCard.addEventListener("click", () => {
+            let frontCard = backCard.previousElementSibling
+    
+            backCard.className = "hide backCard"
+            frontCard.className = "show frontCard"
+    
+            match.flip(frontCard)
+        })
+    })
+}
