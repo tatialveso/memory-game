@@ -1,0 +1,39 @@
+/* padrão de início */
+* {
+    margin: 0; /* distancia entre elementos */
+    padding: 0; /* distancia conteudo e borda */
+    box-sizing: border-box;
+}
+
+article {
+    display: flex;
+    flex-direction: column;  /* row é padrão */
+    justify-content: center; /* mover ele no eixo X */
+    align-items: center; /* mover ele no eixo Y */
+    height: 100vh;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+form>button {
+    margin-top: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+#gameScore p,
+label {
+    font-weight: bold;
+    font-size: 1.5rem; /* 1.5 x 16 -> medida relativa */
+}
