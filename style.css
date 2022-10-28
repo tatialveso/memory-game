@@ -1,21 +1,21 @@
-/* padrão de início */
+/* padrão para início do projeto */
 * {
-    margin: 0; /* distancia entre elementos */
-    padding: 0; /* distancia conteudo e borda */
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     background-color: #FBFBFF;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* importado pelo html pelo google fonts */
 }
 
 article {
     display: flex;
-    flex-direction: column;  /* row é padrão */
-    justify-content: center; /* mover ele no eixo X */
-    align-items: center; /* mover ele no eixo Y */
-    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% da altura da tela */
 }
 
 h1 {
@@ -30,58 +30,67 @@ form {
     text-align: center;
     background-color: #6A8D73;
     padding: 30px 40px;
-    /* padrão */
     border-radius: 10px;
 }
 
 form>input {
     padding: 10px;
-    border: none;
     border-radius: 10px;
+    border: none;
+    margin: 20px 0;
 }
 
 form>button {
     border: none;
-    text-transform: uppercase;
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 1.2rem; /* 1.2 x 16 */
-    font-weight: 600;
     border-radius: 10px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif; /* importado pelo html pelo google fonts */
+    color: #272932;
 }
 
 form>button:hover {
+    cursor: pointer;
     background-color: #272932;
     color: #FBFBFF;
-    cursor: pointer;
 }
 
 .hide {
     display: none;
 }
 
+#gameScore {
+    background-color: #6A8D73;
+    padding: 20px 100px; /* 20px para cima e para baixo / 100px para os lados */
+    border-radius: 10px;
+}
+
 #gameScore p,
 label {
     font-weight: bold;
     font-size: 1.5rem; /* 1.5 x 16 -> medida relativa */
+    text-align: center;
+    color: #272932;
 }
 
 #board {
+    text-align: center;
+    margin: 100px auto;
     width: 70%;
 }
 
-#board > img {
+#board>img {
     margin: 15px;
 }
 
 img {
-    /* box shadow dá sombra pros elementos */
-    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px,
-                rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
-                rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; /* cria sombra em volta do elemento */
     border-radius: 15px;
 }
 
 img:hover {
-    cursor: pointer;
+    cursor: pointer; /* coloca um cursor de mãozinha no mouse */
 }
