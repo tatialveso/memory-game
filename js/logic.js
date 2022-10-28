@@ -1,5 +1,7 @@
 class MemoryGame {
     constructor() {
+        this.userName = "";
+        this.points = 10;
         this.deck = [
             "./img/harmonia.svg",
             "./img/poder.svg",
@@ -52,11 +54,40 @@ class MemoryGame {
 
     //checar as cartas iguais ou não
     checkPair() {
-        // "./img/img.svg" === "./img/img.svg"
+        // if("./img/img.svg" === "./img/img.svg")
         if(this.cardSelected[0].src === this.cardSelected[1].src) {
             console.log("As cartas são iguais")
+
+            // classe turn identificar as cartas que vão permanecer viradas
+            this.cardSelected[0].classList.add("turn")
+            this.cardSelected[1].classList.add("turn")
+
+            this.cardSelected = []
         } else {
             console.log("As cartas são diferentes :(")
+
+            // this.points = this.points - 2
+            this.points -= 2
+
+            setTimeout(() => {
+                // hide = display none || show = display block ou inline (padrão do elemento)
+                this.cardSelected[0].className = "hide frontCard"
+                this.cardSelected[1].className = "hide frontCard"
+
+                this.cardSelected[0].nextElementSibling.classList = "show backCard"
+                this.cardSelected[1].nextElementSibling.classList = "show backCard"
+
+                checkStatus()
+
+                this.cardSelected = []
+            }, 1000)
+        }
+    }
+
+    // responsável por finalizar o jogo
+    checkStatus() {
+        if(this.points === 0) {
+            console.log("Você perdeu :(")
         }
     }
 }

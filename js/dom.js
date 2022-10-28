@@ -5,6 +5,7 @@ const inputName = document.querySelector("#inputName")
 const btnStart = document.getElementById("btnStart")
 const gameScreen = document.querySelector("#gameScreen")
 const gameName = document.getElementById("name")
+const points = document.getElementById("points")
 
 btnStart.addEventListener("click", (event) => {
     // se a função está recarregando a página use:
@@ -20,7 +21,10 @@ btnStart.addEventListener("click", (event) => {
     startScreen.style.display = "none"
     gameScreen.style.display = "flex"
 
-    gameName.innerText = inputName.value
+    match.userName = inputName.value
+    gameName.innerText = match.userName
+
+    points.innerText = match.points
 
     settingUpGame()
 })
@@ -37,6 +41,8 @@ function settingUpGame() {
             frontCard.className = "show frontCard"
     
             match.flip(frontCard)
+
+            points.innerText = match.points
         })
     })
 }
