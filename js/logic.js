@@ -62,6 +62,7 @@ class MemoryGame {
             this.cardSelected[0].classList.add("turn")
             this.cardSelected[1].classList.add("turn")
 
+            this.checkStatus()
             this.cardSelected = []
         } else {
             console.log("As cartas são diferentes :(")
@@ -77,8 +78,7 @@ class MemoryGame {
                 this.cardSelected[0].nextElementSibling.classList = "show backCard"
                 this.cardSelected[1].nextElementSibling.classList = "show backCard"
 
-                checkStatus()
-
+                this.checkStatus()
                 this.cardSelected = []
             }, 1000)
         }
@@ -86,8 +86,33 @@ class MemoryGame {
 
     // responsável por finalizar o jogo
     checkStatus() {
+        // caso o jogador perca
         if(this.points === 0) {
-            console.log("Você perdeu :(")
+            let frontCard = document.querySelectorAll(".frontCard")
+            let backCard = document.querySelectorAll(".backCard")
+
+            frontCard.forEach((frontCard) => {
+                frontCard.className = "show"
+            })
+
+            backCard.forEach((backCard) => {
+                backCard.className = "hide"
+            })
+
+            console.log("Você perdeu :(")            
+        }
+
+        const turnCards = document.querySelectorAll(".turn")
+
+        // quando o jogador ganhou a partida
+        if(turnCards.length === 8) {
+            let boardGame = document.getElementById("board")
+            let gameScore = document.getElementById("gameScore")
+
+            boardGame.style.display = "none"
+            gameScore.style.display = "none"
+
+            alert("Você ganhou :)")
         }
     }
 }
