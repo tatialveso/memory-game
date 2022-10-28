@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #FBFBFF;
+    font-family: 'Poppins', sans-serif;
+}
+
 article {
     display: flex;
     flex-direction: column;  /* row é padrão */
@@ -14,6 +19,7 @@ article {
 }
 
 h1 {
+    color: #272932;
     margin: 20px 0;
     font-size: 3rem;
 }
@@ -22,10 +28,32 @@ form {
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: #6A8D73;
+    padding: 30px 40px;
+    /* padrão */
+    border-radius: 10px;
+}
+
+form>input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
 }
 
 form>button {
+    border: none;
+    text-transform: uppercase;
     margin-top: 20px;
+    padding: 10px;
+    font-size: 1.2rem; /* 1.2 x 16 */
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+form>button:hover {
+    background-color: #272932;
+    color: #FBFBFF;
+    cursor: pointer;
 }
 
 .hide {
@@ -36,4 +64,24 @@ form>button {
 label {
     font-weight: bold;
     font-size: 1.5rem; /* 1.5 x 16 -> medida relativa */
+}
+
+#board {
+    width: 70%;
+}
+
+#board > img {
+    margin: 15px;
+}
+
+img {
+    /* box shadow dá sombra pros elementos */
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px,
+                rgba(0, 0, 0, 0.3) 0 7px 13px -3px,
+                rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+    border-radius: 15px;
+}
+
+img:hover {
+    cursor: pointer;
 }
